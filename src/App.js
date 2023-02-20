@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { TodoInput } from "./components/TodoInput";
+import { TodoList } from "./components/TodoList";
+
+import { ChakraProvider } from "@chakra-ui/react";
+import { useState } from "react";
 
 function App() {
+  const [todo, setTodo] = useState("");
+  const [todoList, setTodoList] = useState([]);
+
+  const onChange = (e) => {
+    setTodo(e.target.value);
+  };
+
+  const addTodo = () => {
+    if (todo !== "") {
+      setTodoList([...todoList, todo]);
+      setTodo("");
+    }
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <div className="App">
+        <div className="todo-container">
+          <TodoList list={todoList} />
+        </div>
+        <div className="todo-input-container">
+          <TodoInput todo={todo} addTodo={addTodo} onChange={onChange} />
+        </div>
+      </div>
+    </ChakraProvider>
   );
 }
 
