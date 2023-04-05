@@ -18,11 +18,17 @@ function App() {
       setTodo("");
     }
   };
+
+  const deleteTodo = (todoText) => {
+    const newTodoList = todoList.filter((todo) => todo !== todoText);
+    setTodoList(newTodoList);
+  };
+
   return (
     <ChakraProvider>
       <div className="App">
         <div className="todo-container">
-          <TodoList list={todoList} />
+          <TodoList list={todoList} deleteTodo={deleteTodo} />
         </div>
         <div className="todo-input-container">
           <TodoInput todo={todo} addTodo={addTodo} onChange={onChange} />
