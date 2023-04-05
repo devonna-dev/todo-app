@@ -1,8 +1,10 @@
 import { TodoInput } from "./components/TodoInput";
 import { TodoList } from "./components/TodoList";
 
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Heading } from "@chakra-ui/react";
 import { useState } from "react";
+
+import "./App.css";
 
 function App() {
   const [todo, setTodo] = useState("");
@@ -27,6 +29,7 @@ function App() {
   return (
     <ChakraProvider>
       <div className="App">
+        <Heading className="todo-header">To-Do App</Heading>
         <div className="todo-container">
           <TodoList list={todoList} deleteTodo={deleteTodo} />
         </div>

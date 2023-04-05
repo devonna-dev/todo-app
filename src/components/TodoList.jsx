@@ -29,8 +29,8 @@ export const TodoList = (props) => {
           ))}
         </div>
       ) : (
-        <div>
-          <Text>No tasks</Text>
+        <div className="empty-todo">
+          <Text>No tasks. Add some below!</Text>
         </div>
       )}
     </>

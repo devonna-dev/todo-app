@@ -1,0 +1,38 @@
+.App {
+  background-color: #f4edea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10rem;
+}
+
+.todo-input {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  max-width: max-content;
+}
+
+.todo-input-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.todo {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 5rem;
+  margin-left: 5rem;
+  width: auto;
+}
+
+.todo-header,
+.empty-todo {
+  color: #373f51;
+}
+
+.empty-todo {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

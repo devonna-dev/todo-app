@@ -4,7 +4,7 @@ export const TodoInput = (props) => {
   const { todo, addTodo, onChange } = props;
 
   return (
-    <div>
+    <div className="todo-input">
       <InputGroup>
         <Input placeholder="Add a task" value={todo} onChange={onChange} />;
         <InputRightElement>
